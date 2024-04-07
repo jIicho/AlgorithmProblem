@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>6. 홀수</title>
+  </head>
+  <body>
+    <script>
+      // 1. 배열 원소 하나하나 반복적으로 돌면서 홀수를 찾아낸다.
+      // 2. 반복문을 돌 때 마다 그 홀수를 하나씩 담을 변수를 만들고 더한다.
+      // 3. 반복문이 돌 때 마다 그 홀수를 비교해서 최솟값을 담을 변수를 만들고 담는다.
+      // 4. 홀수의 합을 담은 변수와 홀수를 비교하며 최솟값을 담은 변수를 리턴한다.
+
+      function solution(arr) {
+        let answer = [];
+        let sum = 0;
+        let min = Number.MAX_SAFE_INTEGER; // 또는 Infinity
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] % 2 === 1) {
+            sum += arr[i];
+            if (arr[i] < min) {
+              min = arr[i];
+            }
+          }
+        }
+        ////////
+        // 리턴하는 값이 두개일때 answer 배열을 만들어 합과 최솟값을 담고 answer을 리턴하자
+        // 배열 추가 : Array.push(), Array.unshift(), Array.splice()
+        // 배열 삭제 : Array.pop(), Array.shift(), Array.splice()
+
+        ////////// 배열 추가
+        // Array.push() : 배열의 끝에 요소를 추가
+        // Array.unshift() : 배열의 앞쪽에 요소를 추가
+        // Array.splice("위치", 0,["요소1", "요소2"], ...) : 원하는 위치에 하나 이상의 요소를 추가할 수 있다.
+
+        /////////// 배열 삭제
+        // Array.pop() :  배열의 마지막 요소를 제거
+        // Array.shift() : 배열의 첫번째 요소를 제거
+        // Array.splice("시작위치", "제거건수") : 원하는 위치에서 하나의상의 요소를 제거할 수 있다.
+        // Array.splice("시작위치", "제거건수", ["요소1", "요소2", ...]) : 요소를 제거 후 해당위치에 새로운 요소를 추가할 수 있다.
+
+        answer.push(sum);
+        answer.push(min);
+        return answer;
+      }
+      let arr = [12, 77, 38, 41, 53, 92, 85];
+      console.log(solution(arr));
+    </script>
+  </body>
+</html>
