@@ -23,6 +23,21 @@
 
       let arr2 = [12, 20, 54, 30, 87, 91, 30];
       console.log(solution(0, arr2) + "대 입니다.");
+
+      ////////////////////////////////////////////////////////////////////////
+      /////// for ... of 명령문을 사용한 문제 풀이
+      function anotherSolution(day, arr) {
+        let answer = 0;
+        for (let x of arr) {
+          if (x % 10 == day) {
+            answer++;
+          }
+        }
+        return answer;
+      }
+
+      arr = [25, 23, 11, 47, 53, 17, 33];
+      console.log(anotherSolution(3, arr));
     </script>
   </body>
 </html>
