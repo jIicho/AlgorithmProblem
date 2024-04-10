@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>8. 일곱 난쟁이</title>
+  </head>
+  <body>
+    <script>
+      function solution(arr) {
+        let answer = arr;
+        let sum = answer.reduce((a, b) => a + b, 0);
+        // reduce( ) 메서드는 배열의 각 요소에 대해 주어진 리듀서(reducer) 함수를 실행하고, '하나'의 결과값을 반환합니다.
+        // 여기서 sum 은 answer, 즉 arr 배열의 모든 요소의 합과 같다.
+        // ( (a,b) => a+b, 0 ) 여기서 0은 초기값과 같은 느낌!
+        // 만약, 여기서 0 대신 10 을 쓰면 10을 기본값으로 하고 더한다.
+
+        // 9명 중에서 2명의 키를 합한 값을 전체 사람 키를 합한 값에서 뺐을 때 100이면 그 두명이 범인!!!
+        // 그 두명을 찾기위한 반복문을 돌린다.
+        for (let i = 0; i < 8; i++) {
+          for (let j = i + 1; j < 9; j++) {
+            if (sum - (answer[i] + answer[j]) == 100) {
+              answer.splice(j, 1);
+              answer.splice(i, 1);
+              // splice( ) 메서드는 배열의 기존 요소를 삭제 또는 교체하거나
+              // 새 요소를 추가하여 배열의 내용을 변경한다.
+              //  ===> Array.splice (n번 인덱스, 제거할 요소의 개수, 추가할 요소값)
+
+              // splice(j, 1)   =>  j번 인덱스에서 하나의 요소를 삭제한다는 뜻
+              // splice(i, 1)   =>  i번 인덱스에서 하나의 요소를 삭제한다는 뜻
+            }
+          }
+        }
+        return answer;
+      }
+
+      let arr = [20, 7, 23, 19, 10, 15, 25, 8, 13];
+      console.log(solution(arr));
+    </script>
+  </body>
+</html>
