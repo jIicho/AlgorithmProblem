@@ -34,6 +34,22 @@
         return answer;
       }
       console.log(solution("BANANA"));
+
+      ////////////////////////////////////////////////////////////////// for .... of 명령문으로 풀이한 내용 추가.
+      function anotherSolution(s) {
+        let answer = "";
+        for (let x of s) {
+          if (x == "A") {
+            answer += "#";
+          } else {
+            answer += x;
+          }
+        }
+        return answer;
+      }
+
+      let str = "BANANA";
+      console.log(anothersolution(str));
     </script>
   </body>
 </html>
