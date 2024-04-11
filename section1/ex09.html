@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>9. A를 #으로</title>
+  </head>
+  <body>
+    <script>
+      function solution(str) {
+        // 문자열을 배열로 변환시키기 3가지 방법
+        // 1. split() 메서드 : String 객체를 지정한 구분자를 이용하여 여러 개의 문자열로 나눈다.
+        //                  -> split(); /  split(separator);  /  split(separator, limit);
+        // 2. spread 연산자 : 전개 구문을 사용하면 배열이나 문자열과 같이 반복 가능한 문자를
+        //                  0개 이상의 인수(함수로 호출할 경우) 또는 요소(배열 리터럴의 경우)로 확장하여,
+        //                  0개 이상의 키-값의 쌍으로 객체를 확장시킬 수 있다.
+        //                  -> ...arr 이런식으로 표현한다.
+        // 3. Array 클래스의 from() 메서드
+        //                  -> console.log(Array.from('foo'));
+        //                     Expected output: Array ["f", "o", "o"]
+
+        let answer = "";
+        let arr = str.split("");
+        // console.log(arr);  문자열을 배열로 변환시켰는지 확인하는 코드
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] === "A") {
+            arr[i] = "#";
+            answer += arr[i];
+          } else {
+            answer += arr[i];
+          }
+        }
+        return answer;
+      }
+      console.log(solution("BANANA"));
+    </script>
+  </body>
+</html>
