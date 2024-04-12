@@ -21,6 +21,35 @@
 
       let str = "KoreaTimeGood";
       console.log(solution(str));
+
+      ///////////////////////////////////////// 다른 풀이
+
+      function anotherSolution(s) {
+        let answer1 = 0;
+        for (let x of s) {
+          //let num = x.charCodeAt();
+
+          // charCodeAt() 메서드는
+          // 문자열을 해당하는 문자의 아스키코드번호로 변환해주는 함수
+          // <--> formCharCode() : 아스키코드번호를 받아 문자열을 구성해주는 함수.
+
+          // 영어 대문자는 65이상 90이하이다.
+
+          //if(num >= 65 && num <=90){
+          //  answer1++;
+          // }
+
+          if (x === x.toUpperCase()) {
+            // toUpperCase() 메서드는 문자열을 대문자로 변환한 값을 반환한다.
+            // JavaScript의 문자열은 불변하므로 원본 문자열에는 영향을 주지 않는다.
+            answer1++;
+          }
+        }
+        return answer1;
+      }
+
+      let str1 = "KoreaTimeGood";
+      console.log(anotherSolution(str1));
     </script>
   </body>
 </html>
