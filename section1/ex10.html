@@ -24,6 +24,20 @@
 
       let str = "COMPUTERPROGRAMMING";
       console.log(solution(str, "R"));
+
+      ////////////////////////////////////////////////////////for ...of 명령문 사용
+      function anotherSolution1(s, t) {
+        let answer1 = 0;
+        for (let x of s) {
+          if (x === t) {
+            answer1++;
+          }
+        }
+        return answer1;
+      }
+
+      let str1 = "COMPUTERPROGRAMMING";
+      console.log(anotherSolution1(str1, "R"));
     </script>
   </body>
 </html>
