@@ -22,6 +22,29 @@
 
       let str = "itisTimeToStudy";
       console.log(solution(str));
+
+      //////////////////////////////////////////////////// 다른 풀이
+
+      function anotherSolution(s) {
+        let ans = "";
+        for (let x of s) {
+          let num = x.charCodeAt();
+          if (num >= 97 && num <= 122) {
+            ans += String.fromCharCode(num - 32);
+          } else {
+            ans += x;
+          }
+          // if (x === x.toLowerCase()){
+          //  ans += x.toUpperCase();
+          // }else{
+          //  ans += x;
+          // }
+        }
+        return ans;
+      }
+
+      let str1 = "ItisTimeToStudy";
+      console.log(anotherSolution(str1));
     </script>
   </body>
 </html>
