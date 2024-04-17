@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>15. 가운데 문자 출력</title>
+  </head>
+  <body>
+    <script>
+      function solution(str) {
+        let answer = "";
+        let standard = parseInt(str.length / 2);
+        if (str.length % 2 === 0) {
+          answer = str.substr(standard - 1, 2);
+        } else {
+          answer = str.substr(standard, 1);
+        }
+        return answer;
+      }
+
+      let str1 = "study";
+      let str2 = "good";
+
+      console.log(solution(str1));
+      console.log(solution(str2));
+
+      // substr() : 특정 index에서 원하는 길이만큼 잘라서 문자열로 리턴
+      // str.substr(start[, length])
+      // start는 index이고, length길미만큼 잘라서 문자열로 리턴한다.
+    </script>
+  </body>
+</html>
