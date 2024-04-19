@@ -28,6 +28,39 @@
       // 찾을 수 없는 경우 -1을 반환합니다.
       // indexOf(searchElement)
       // indexOf(searchElement, formIndex)
+
+      ////////////////////////////////////////////////////////// 다른 풀이
+
+      function anotherSolution(s) {
+        let ans;
+        // console.log(s.indexOf("student"));  ===>  4
+        ans = s.filter((v, i) => {
+          // console.log(v, i);
+          if (s.indexOf(v) === i) {
+            return v;
+          }
+        });
+        return ans;
+      }
+
+      let str = ["good", "time", "good", "time", "student"];
+      console.log(anotherSolution(str));
+
+      // Array.filter() 메서드는
+      // 주어진 배열의 일부에 대한 얕은 복사본을 생성하고,
+      // 주어진 배열에서 제공된 함수에 의해 구현된 테스트를 통과한 요소로만 필터링 한다.
+
+      // filter(callbackFn)
+      // filter(callbackFn, thisArg)
+      // callbackFn : 배열의 각 요소에 대해 실행할 함수.
+      //              결과 배열에 요소를 유지하려면 참 값을 반환하고,
+      //              그렇지 않으면 거짓 값을 반환해야 합니다.
+      //              이 함수는 다음 인수를 사용하여 호출됩니다.
+      //            - element : 배열에서 처리 중인 현재 요소
+      //            - index   : 배열에서 처리 중인 현재 요소의 인덱스
+      //            - array   : filter() 가 호출된 배열
+
+      // thisArg    : callbackFn을 실행할때 this의 값으로 사용할 값
     </script>
   </body>
 </html>
