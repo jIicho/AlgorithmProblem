@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>17. 중복 단어 제거</title>
+  </head>
+  <body>
+    <script>
+      function solution(arr) {
+        let answer = [];
+        for (let i = 0; i < arr.length; i++) {
+          // console.log(arr[i]);
+          if (answer.indexOf(arr[i]) === -1) {
+            answer.push(arr[i]);
+            // console.log(answer);
+          }
+        }
+        return answer;
+      }
+
+      let arr = ["5", "good", "time", "good", "time", "student"];
+      console.log(solution(arr));
+
+      // Array.indexOf() 메서드는
+      // 배열에서 주어진 요소를 찾을 수 있는 첫 번째 인덱스를 반환하고,
+      // 찾을 수 없는 경우 -1을 반환합니다.
+      // indexOf(searchElement)
+      // indexOf(searchElement, formIndex)
+    </script>
+  </body>
+</html>
