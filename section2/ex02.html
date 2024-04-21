@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2. 보이는 학생</title>
+  </head>
+  <body>
+    <script>
+      function solution(arr) {
+        // 첫번째 서있는 아이는 무조건 보이므로 초기값 1로 시작
+        let answer = 1;
+
+        // 앞에 큰키가 있다면 그 키보다 더 큰 학생일때까지 보이지 않으므로
+        // 비교할 변수를 하나 만들어준다. 초기값은 첫번째 학생의 키 130
+        let taller = 130;
+
+        // 학생 한명한명 다 반복해서 처리해야하므로 for문을 사용
+        for (let i = 1; i < arr.length; i++) {
+          // 만약, 비교의 기준이 될 큰키보다 클 경우에
+          // 그 변수(taller)의 값을 더 큰 값으로 넣어준다.
+          if (taller < arr[i]) {
+            taller = arr[i];
+            answer++;
+          }
+        }
+        return answer;
+      }
+
+      let arr = [130, 135, 148, 140, 145, 150, 150, 153];
+      console.log(solution(arr));
+    </script>
+  </body>
+</html>
