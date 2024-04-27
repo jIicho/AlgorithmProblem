@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1. 회문 문자열</title>
+  </head>
+  <body>
+    <script>
+      function solution(str) {
+        let answer = "";
+        let s = str.toLowerCase();
+        // 방법 1.
+
+        // i) 문자열을 배열로 만들기
+        // split() 메서드는 문자열을 부분 문자열로 구분해
+        // 문자열 객체를 여러 개의 문자열로 이루어진 배열로 분할한다.
+
+        // ii) 문자열 반전하기
+        // reverse() 메서드는 배열을 반전합니다.
+        // 첫번째 배열 요소는 마지막 요소가 되고,
+        // 마지막 요소는 첫번째 요소가 됩니다.
+
+        // iii) join() 메서드는 배열의 모든 요소를 문자열로 결합한다.
+
+        let splitStr = s.split("");
+        // console.log(splitStr);
+
+        let reverseStr = splitStr.reverse();
+        // console.log(reverseStr);
+
+        let joinStr = reverseStr.join("");
+        // console.log(joinStr);
+
+        if (joinStr == s) {
+          answer = "YES";
+        } else {
+          answer = "NO";
+        }
+        return answer;
+      }
+
+      let str = "gooG";
+      // let str1 = "gooD";
+      console.log(solution(str));
+      // console.log(solution(str1));
+    </script>
+  </body>
+</html>
