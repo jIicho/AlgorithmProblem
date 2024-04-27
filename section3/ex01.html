@@ -88,6 +88,18 @@
       }
 
       console.log(anotherSolution2(str));
+
+      /////////////////////////////////////////////// 다른 풀이
+
+      function anotherSolution3(s) {
+        let ans3 = "YES";
+        s = s.toLowerCase();
+        if (s.split("").reverse().join("") != s) {
+          ans3 = "NO";
+        }
+        return ans3;
+      }
+      console.log(anotherSolution3(str));
     </script>
   </body>
 </html>
