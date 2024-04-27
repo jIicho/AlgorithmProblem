@@ -72,6 +72,22 @@
         return ans;
       }
       console.log(anotherSolution(str));
+
+      /////////////////////////////////////////////// 다른 풀이
+
+      function anotherSolution2(s) {
+        let ans2 = "YES";
+        s = s.toLowerCase();
+        let len = s.length;
+        for (let k = 0; k < Math.floor(len / 2); k++) {
+          if (s[k] != s[len - k - 1]) {
+            return "NO";
+          }
+        }
+        return ans2;
+      }
+
+      console.log(anotherSolution2(str));
     </script>
   </body>
 </html>
