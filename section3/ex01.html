@@ -45,6 +45,33 @@
       // let str1 = "gooD";
       console.log(solution(str));
       // console.log(solution(str1));
+
+      /////////////////////////////////////////////// 다른 풀이
+
+      // 방법 2.
+      // 내립차순으로 반복하는 for문으로 문자열 반전하기
+      function anotherSolution(str) {
+        // i) 새로 생성될 문자열을 담을 빈 문자열 만들기
+        let ans = "";
+        let toLower = str.toLowerCase();
+        let reverse = "";
+
+        // ii) for문을 작성하기
+        // 반복문의 시작점은 문자열의 마지막 문자 'G'의 인덱스인 str.length -1
+        // i 가 0보다 크거나 같은 한 코드는 반복적으로 수행된다.
+        // 그리고 코드가 반복될 때마다 i의 값을 줄인다.
+        for (let j = str.length - 1; j >= 0; j--) {
+          reverse += str[j].toLowerCase();
+          // console.log(reverse);
+        }
+        if (reverse == toLower) {
+          ans = "YES";
+        } else {
+          ans = "NO";
+        }
+        return ans;
+      }
+      console.log(anotherSolution(str));
     </script>
   </body>
 </html>
