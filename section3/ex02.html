@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2. 유효한 팰린드롬</title>
+  </head>
+  <body>
+    <script>
+      function solution(str) {
+        let answer = "YES";
+        str = str.toLowerCase().replace(/[^a-z]/g, "");
+        // [^a-z] : 하나의 문자세트 안에서 ^는 부정의 의미이다.
+        // 여기서는 어떤 소문자와도 대응되지 않는 것을을 의미
+        // 영어 소문자가 아닌 것은 공백으로 처리한다는 뜻.
+        // console.log(str);
+        // foundtimestudyudutsemitdnuof 출력
+
+        if (str.split("").reverse().join("") !== str) {
+          answer = "NO";
+        }
+        return answer;
+      }
+
+      let str = "found7, time: study; Yduts; emit, 7Dnuof";
+      console.log(solution(str));
+    </script>
+  </body>
+</html>
