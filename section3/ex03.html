@@ -21,6 +21,25 @@
 
       let str = "gOen2T0s8eSoft";
       console.log(solution(str));
+
+      //////////////////////////////////////////// 다른 풀이
+
+      function anotherSolution(str) {
+        let ans = "";
+        for (let x of str) {
+          if (!isNaN(x)) {
+            // 전역 NaN 속성은 Not-A-Number(숫자가 아님)를 나타냅니다.
+            // isNaN() 함수를 어떤 값이 NaN인지 판별합니다.
+            // isNaN(value)
+            // value : 테스트 되는 값
+            // 반환 값 : 주어진 값이 NaN이면 true, 아니면 false
+            // true, false로 평가되기 때문에 같음 연산을 사용할 수 없다.
+            ans += x;
+          }
+        }
+        return ans;
+      }
+      console.log(anotherSolution(str));
     </script>
   </body>
 </html>
