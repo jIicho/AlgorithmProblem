@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3. 숫자만 추출</title>
+  </head>
+  <body>
+    <script>
+      function solution(str) {
+        let answer = "";
+        str = str.split("");
+        for (let i = 0; i < str.length; i++) {
+          if (0 <= str[i] || str[i] <= 9) {
+            answer += str[i];
+          }
+        }
+        return answer;
+      }
+
+      let str = "gOen2T0s8eSoft";
+      console.log(solution(str));
+    </script>
+  </body>
+</html>
