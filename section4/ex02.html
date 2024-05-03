@@ -13,6 +13,9 @@
           return false;
         }
         for (let i = 2; i <= parseInt(Math.sqrt(num)); i++) {
+          // parseInt() 함수는 문자열 인자를 파싱하여 특정 진수의 정수를 반환한다.
+          // Math.sqrt() 함수는 숫자의 제곱근을 반환한다.
+
           if (num % i === 0) {
             return false;
           }
