@@ -9,16 +9,23 @@
   <body>
     <script>
       function solution(test) {
+        // 두 학생중 한명이 3번의 수학 테스트에서 모두 앞서야 한다.
+
         let answer = 0;
-        let m = test.length;
-        let n = test[0].length;
+        let m = test.length; // 3
+        let n = test[0].length; // 4
+
         for (let i = 1; i <= n; i++) {
+          // 첫번째부터 네번째까지 증가시키면서 반복문  => 등수, 1등부터 4등까지 반복
           for (let j = 1; j <= n; j++) {
+            // 첫번째부터 네번째까지 증가시키면서 반복문  => 등수, 1등부터 4등까지 반복
             let cnt = 0;
             for (let k = 0; k < m; k++) {
-              let pi = 0;
-              let pj = 0;
+              // 시행된 수학 테스트만큼 반복
+              let pi = 0; // 학생 한명의 등수를 담기 위한 변수 pi
+              let pj = 0; // 비교할 또 한명의 학생 등수를 담기 위한 변수 pj
               for (let s = 0; s < n; s++) {
+                // k번의 수학 테스트에서 받은 등수에 접근하기 위한 반복문
                 if (test[k][s] === i) {
                   pi = s;
                 }
@@ -43,6 +50,10 @@
         [4, 3, 2, 1],
         [3, 1, 4, 2],
       ];
+      // 3번 학생 1등, 4번 학생 2등, 1번 학생 3등, 2번 학생 4등
+      // 4번 학생 1등, 3번 학생 2등, 2번 학생 3등, 1번 학생 4등
+      // 3번 학생 1등, 1번 학생 2등, 4번 학생 3등, 2번 학생 4등
+
       console.log(solution(arr));
     </script>
   </body>
